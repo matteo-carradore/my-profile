@@ -1,0 +1,606 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Special+Elite&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Noto+Serif+JP:wght@300;400;700&family=UnifrakturMaguntia&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ══════════════════════════════════════════════════
+   GLOBAL
+══════════════════════════════════════════════════ */
+body {
+  background: #0a0a0a;
+  color: #e0d8cc;
+  font-family: 'Courier Prime', monospace;
+  overflow-x: hidden;
+}
+
+.page-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 0 100px;
+}
+
+.global-nav {
+  background: #0a0a0a;
+  border-bottom: 1px solid #2a2a2a;
+  padding: 14px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.global-nav-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-style: italic;
+  color: #c8a86a;
+  letter-spacing: 1px;
+}
+
+.global-nav-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+
+.global-nav-links a {
+  font-family: 'Courier Prime', monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #666;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.global-nav-links a:hover { color: #c8a86a; }
+
+/* ══════════════════════════════════════════════════
+   1 FELLINI
+══════════════════════════════════════════════════ */
+.fellini-section {
+  background: #0e0c0a;
+  position: relative;
+  padding: 100px 50px;
+  overflow: hidden;
+}
+
+.fellini-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='0.08'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+.fellini-section::after {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 28px;
+  background: #1a1a1a;
+  background-image: repeating-linear-gradient(180deg, transparent 0px, transparent 10px, #0a0a0a 10px, #0a0a0a 12px);
+  border-right: 2px solid #2a2a2a;
+}
+
+.fellini-inner {
+  position: relative;
+  z-index: 1;
+  padding-left: 24px;
+}
+
+.fellini-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  color: #8a0000;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.fellini-eyebrow {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  font-style: italic;
+  color: #5a5040;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.fellini-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(54px, 10vw, 110px);
+  font-weight: 300;
+  font-style: italic;
+  color: #f0e8d8;
+  line-height: 0.88;
+  letter-spacing: -2px;
+  margin-bottom: 8px;
+}
+
+.fellini-name strong {
+  font-weight: 300;      
+  color: #f0e8d8;       
+  font-style: italic;   
+  display: block;      
+}
+
+.fellini-rule {
+  width: 80px; height: 1px;
+  background: #8a0000;
+  margin: 28px 0;
+}
+
+.fellini-grid {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 36px;
+  align-items: start;
+}
+
+.fellini-photo {
+  border: 1px solid #333;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.fellini-photo:hover {
+  transform: translateY(-4px);
+  border-color: #8a0000;
+  cursor: pointer;
+}
+
+.fellini-photo-inner {
+  width: 160px; height: 210px;
+  background: #1a1a1a;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.matteo-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(100%) contrast(110%);
+  transition: filter 0.3s ease;
+}
+
+.fellini-photo:hover .matteo-photo {
+  filter: grayscale(0%) contrast(100%);
+}
+
+.fellini-photo-caption {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 10px; font-style: italic;
+  color: #3a3028; text-align: center;
+  margin-top: 6px; letter-spacing: 2px;
+}
+
+.fellini-stamp {
+  display: inline-block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 10px; letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #f0e8d8;
+  background: #8a0000;
+  padding: 4px 12px; margin-bottom: 16px;
+}
+
+.fellini-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px; font-style: italic; font-weight: 300;
+  color: #c8b890;
+  line-height: 1.55; margin-bottom: 16px;
+  border-left: 2px solid #8a0000;
+  padding-left: 16px;
+}
+
+.fellini-bio {
+  font-size: 14px; 
+  line-height: 1.9;
+  color: #d0c8b0;
+  margin-bottom: 28px;
+}
+
+.fellini-note {
+  margin-top: 44px;
+  padding: 20px;
+  background: rgba(138, 0, 0, 0.04);
+  border-left: 3px solid #8a0000;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #9a8e7a;
+  transition: all 0.3s ease;
+}
+
+.fellini-note:hover {
+  transform: translateY(-4px);
+  background: rgba(138, 0, 0, 0.08);
+  cursor: pointer;
+}
+
+.fellini-note strong {
+  color: #8a0000;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.fellini-films {
+  display: flex; gap: 4px; margin-top: 36px;
+}
+
+.fellini-film-card {
+  flex: 1;
+  background: #141210;
+  border: 1px solid #2a2820;
+  padding: 16px 14px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.fellini-film-card:hover {
+  background: #1c1a17;
+  border-color: #8a0000;
+  transform: translateY(-4px);
+  cursor: pointer;
+}
+
+.fellini-film-card::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 0; height: 0;
+  border-left: 14px solid transparent;
+  border-top: 14px solid #8a0000;
+}
+
+.fellini-film-card:hover::after {
+  border-top-color: #ff0000;
+}
+
+.fellini-film-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 9px; letter-spacing: 3px;
+  text-transform: uppercase; color: #8a0000;
+  margin-bottom: 6px; display: block;
+}
+
+.fellini-film-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px; font-style: italic; font-weight: 600;
+  color: #d0c8b0; margin-bottom: 8px;
+}
+
+.fellini-film-desc {
+  font-size: 13px; color: #9a8e7a; line-height: 1.7;
+}
+
+/* ══════════════════════════════════════════════════
+   2 WES ANDERSON
+══════════════════════════════════════════════════ */
+.wes-section {
+  background: #f5e6c8;
+  position: relative;
+  padding: 100px 40px;
+  border-top: 6px solid #c8841a;
+}
+
+.wes-section-title-bar {
+  background: #c8841a;
+  margin: -100px -40px 40px;
+  padding: 14px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wes-section-label {
+  font-family: 'Special Elite', cursive;
+  font-size: 10px; letter-spacing: 5px;
+  text-transform: uppercase; color: #1a0c04;
+}
+
+.wes-section-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 11px; font-style: italic; color: #f5e6c8;
+  border: 1px solid rgba(245,230,200,0.4);
+  padding: 2px 10px;
+}
+
+.wes-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px; font-weight: 900; color: #3a1e0a;
+  text-align: center; margin-bottom: 30px;
+}
+
+.wes-proj-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4px;
+}
+
+.wes-proj-card {
+  background: #fdf4e0;
+  border: 2px solid #8b5e3c;
+  padding: 20px 18px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.wes-proj-card:hover {
+  background: #f5e6c8;
+  border-color: #c8841a;
+  transform: translateY(-4px);
+  cursor: pointer;
+}
+
+.wes-proj-card::before, .wes-proj-card::after {
+  content: ''; position: absolute; width: 10px; height: 10px;
+}
+
+.wes-proj-card::before {
+  top: 4px; left: 4px;
+  border-top: 2px solid #c8841a; border-left: 2px solid #c8841a;
+}
+
+.wes-proj-card::after {
+  bottom: 4px; right: 4px;
+  border-bottom: 2px solid #c8841a; border-right: 2px solid #c8841a;
+}
+
+.wes-proj-tag {
+  font-family: 'Special Elite', cursive;
+  font-size: 8px; letter-spacing: 3px; color: #8b3a28;
+  margin-bottom: 8px; display: block;
+}
+
+.wes-proj-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 19px; font-weight: 700; color: #3a1e0a;
+  margin-bottom: 8px;
+}
+
+.wes-proj-desc {
+  font-size: 12px; color: #6b3d1e; line-height: 1.65;
+}
+
+.wes-proj-card.featured {
+  grid-column: 1 / -1;
+  background: #c8841a; border-color: #5c3210;
+  display: grid; grid-template-columns: 64px 1fr; gap: 18px; align-items: center;
+}
+
+.wes-proj-card.featured .wes-proj-tag,
+.wes-proj-card.featured .wes-proj-title { color: #fdf4e0; }
+.wes-proj-card.featured .wes-proj-desc { color: #f5e6c8; }
+
+.wes-films {
+  display: flex; gap: 4px; margin-top: 36px;
+}
+
+.wes-film-card {
+  flex: 1; background: #fdf4e0; border: 2px solid #8b5e3c;
+  padding: 16px 14px; transition: all 0.3s ease;
+}
+
+.wes-film-card:hover {
+  background: #f5e6c8;
+  border-color: #c8841a;
+  transform: translateY(-4px);
+  cursor: pointer;
+}
+
+.wes-film-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px; font-weight: 700; color: #3a1e0a; margin-bottom: 8px;
+}
+
+.wes-film-desc {
+  font-size: 13px; color: #3a1e0a; line-height: 1.7;
+}
+
+/* ══════════════════════════════════════════════════
+   3 MIYAZAKI
+══════════════════════════════════════════════════ */
+.miyazaki-section {
+  background: #1a2a1e;
+  position: relative;
+  padding: 100px 50px;
+  overflow: hidden;
+}
+
+.miyazaki-section::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(180deg, #1a2a3a 0%, #1a2a1e 40%, #1e2a1a 100%);
+}
+
+.miyazaki-inner { position: relative; z-index: 1; }
+
+.miyazaki-label {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 12px; letter-spacing: 6px; color: #7ab8a0;
+  margin-bottom: 12px; display: block;
+}
+
+.miyazaki-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 36px; font-weight: 300; color: #d0e8d8;
+  margin-bottom: 44px; line-height: 1.4;
+}
+
+.miyazaki-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px;
+}
+
+.miyazaki-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(122,184,160,0.2);
+  padding: 20px 16px; text-align: center;
+  transition: all 0.3s ease;
+}
+
+.miyazaki-card:hover {
+  background: rgba(122,184,160,0.08);
+  border-color: #7ab8a0;
+  transform: translateY(-4px);
+  cursor: pointer;
+}
+
+.miyazaki-card-desc {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 14px; color: #a8c7b0; line-height: 1.8;
+}
+
+.miyazaki-films {
+  display: flex; gap: 6px; margin-top: 36px;
+  padding-top: 28px; border-top: 1px solid rgba(122,184,160,0.15);
+}
+
+.miyazaki-film-card {
+  flex: 1; background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(122,184,160,0.2);
+  padding: 16px 14px; transition: all 0.3s ease;
+}
+
+.miyazaki-film-card:hover {
+  background: rgba(122,184,160,0.08);
+  border-color: #7ab8a0;
+  transform: translateY(-4px);
+  cursor: pointer;
+}
+
+.miyazaki-film-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 18px; color: #d0e8d8; margin-bottom: 8px;
+}
+
+.miyazaki-film-desc {
+  font-size: 13px; color: #a8c7b0; line-height: 1.8;
+}
+
+/* ══════════════════════════════════════════════════
+   4 TIM BURTON
+══════════════════════════════════════════════════ */
+.burton-section {
+  background: #080810;
+  position: relative;
+  padding: 100px 50px;
+  overflow: hidden;
+}
+
+.burton-inner { position: relative; z-index: 1; }
+
+.burton-title {
+  font-family: 'UnifrakturMaguntia', cursive;
+  font-size: clamp(36px, 6vw, 60px); color: #e8e0f0;
+  margin-bottom: 8px;
+}
+
+.burton-subtitle {
+  font-family: 'Courier Prime', monospace;
+  font-size: 13px; color: #6a5a80; margin-bottom: 36px;
+}
+
+.burton-dreams {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px;
+}
+
+.burton-dream {
+  background: #0c0c18;
+  border: 1px solid #2a1840;
+  padding: 24px 18px;
+  transition: all 0.3s ease;
+}
+
+.burton-dream:hover {
+  background: #161625;
+  border-color: #6030a0;
+  transform: translateY(-4px);
+  cursor: pointer;
+}
+
+.burton-dream-body {
+  font-size: 13px; color: #a090b8; line-height: 1.8;
+}
+
+.burton-films {
+  display: flex; gap: 4px; margin-top: 36px;
+}
+
+.burton-film-card {
+  flex: 1; background: #0c0c18; border: 1px solid #2a1840;
+  padding: 16px 14px; transition: all 0.3s ease;
+}
+
+.burton-film-card:hover {
+  border-color: #6030a0;
+  transform: translateY(-4px);
+  cursor: pointer;
+}
+
+.burton-film-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px; color: #c0a8e0; margin-bottom: 8px;
+}
+
+.burton-film-desc {
+  font-size: 13px; color: #a090b8; line-height: 1.7;
+}
+
+/* ══════════════════════════════════════════════════
+   REPRISE DU STYLE CONTACT (FANTASTIC MR FOX)
+══════════════════════════════════════════════════ */
+
+/* Les couleurs de base */
+:root {
+  --fmf-amber: #C8841A;
+  --fmf-mustard: #B87C14;
+  --fmf-soil: #7A4A20;
+  --fmf-bark: #5C3210;
+  --fmf-brick: #8B3A28;
+  --fmf-yellow: #E8B820;
+}
+
+/* Le décor (arbres, collines, herbe) */
+.panorama { width: 100%; height: 200px; position: relative; overflow: hidden; background: linear-gradient(180deg, #C85818 0%, #E8903A 100%); }
+.fmf-hill { position: absolute; bottom: 0; background: #3A4A1C; border-radius: 50% 50% 0 0; }
+.fh1 { width:55%; height:110px; left:-5%; }
+.fh2 { width:42%; height:90px; left:22%; background: #4A5A24; }
+.fh3 { width:50%; height:105px; left:50%; }
+.fmf-tree { position: absolute; bottom: 0; }
+.fmf-trunk { background: var(--fmf-bark); margin: 0 auto; position: relative; }
+.fmf-leaf { position: absolute; width:10px; height:14px; background: var(--fmf-brick); border-radius: 50% 50% 50% 0; }
+.grass-stalk { position: absolute; bottom: 0; background: #C09040; }
+
+/* Le bandeau de sol et le terrier */
+.ground-strip { width: 100%; height: 44px; background: linear-gradient(180deg, #8B5E2C 0%, #6A4018 100%); border-top: 3px solid #5A3010; position: relative; }
+.fox-hole { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 90px; height: 38px; background: #1A0C04; border-radius: 50% 50% 0 0; }
+
+/* La zone de texte jaune */
+.contact-section { background: var(--fmf-yellow); border-top: 4px solid var(--fmf-bark); padding-bottom: 40px; }
+.contact-brick { height: 10px; background: var(--fmf-brick); background-image: repeating-linear-gradient(90deg, transparent 0px, transparent 30px, rgba(0,0,0,0.1) 30px, rgba(0,0,0,0.1) 32px); }
+.contact-inner { padding: 28px; text-align: center; color: var(--fmf-bark); }
+
+/* Les boutons de réseaux sociaux (pour qu'ils ne soient plus de simples liens bleus) */
+.social-row { display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap; margin-top: 20px; }
+.social-btn { text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 8px; transition: transform 0.2s; }
+.social-btn:hover { transform: translateY(-5px); }
+.social-box { width: 60px; height: 60px; background: var(--fmf-bark); border: 3px solid var(--fmf-mustard); border-radius: 4px; display: flex; align-items: center; justify-content: center; }
+.social-label { font-family: 'Special Elite', cursive; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--fmf-bark); }
+.social-divider { width: 1px; height: 50px; background: rgba(92, 50, 16, 0.2); }
+
+.fellini-film-card, 
+.wes-film-card, 
+.miyazaki-film-card, 
+.burton-film-card {
+  text-decoration: none; 
+  color: inherit;        
+  display: block;      
+}
+
